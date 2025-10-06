@@ -18,21 +18,21 @@ def limpar():
     """Limpa a entrada."""
     entrada.delete(0, tk.END)
 
-# Cria a janela principal
+# janela principal
 janela = tk.Tk()
 janela.title("Calculadora")
 
-# Configura a grade para expansão
+# grade para expansão
 for i in range(5):  # 4 linhas de botões + 1 linha de entrada
     janela.grid_rowconfigure(i, weight=1)  # Permite que as linhas expandam
 for j in range(4):  # 4 colunas
     janela.grid_columnconfigure(j, weight=1)  # Permite que as colunas expandam
 
-# Cria o campo de entrada
+# campo de entrada
 entrada = tk.Entry(janela, font=("Arial", 18), bd=8, justify='right')
 entrada.grid(row=0, column=0, columnspan=4, sticky="nsew")  # Ocupa as 4 colunas, ajusta com `sticky`
 
-# Botões da calculadora
+# botões
 botoes = [
     '7', '8', '9', '/',
     '4', '5', '6', '*',
@@ -40,7 +40,7 @@ botoes = [
     'C', '0', '=', '+'
 ]
 
-# Cria os botões dinamicamente
+# botões dinamicamente
 linha = 1
 coluna = 0
 for botao in botoes:
@@ -59,5 +59,6 @@ for botao in botoes:
         coluna = 0
         linha += 1
 
-# Inicia o loop da interface gráfica
+# loop da interface gráfica
 janela.mainloop()
+
